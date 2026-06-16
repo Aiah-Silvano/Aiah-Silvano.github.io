@@ -1,0 +1,222 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: linear-gradient(#0F1722, #1E2834, #263240, #202A36);
+    color: white;
+    font-family: 'poppins', sans-serif;
+    scroll-snap-type: y mandatory;
+    scroll-padding-top: 5rem;
+}
+
+section {
+    scroll-snap-align: start;
+    min-height: 100vh;
+}
+
+.gradient-body {
+    background: linear-gradient(#0F1722, #1E2834, #263240, #202A36);
+}
+
+.transparent-bg {
+    background: transparent;
+}
+
+.btn-style {
+    /* background: #d2a941; */
+    color: #ffffff;
+    border: 2px solid #d2a941;
+}
+
+/* Changes color smoothly when your mouse hovers over it */
+.btn-style:hover {
+    background: #d2a941; 
+    color: #263240;
+    
+}
+
+#changing-text {
+    color: #f8cc5e;
+    font-weight: 700;
+}
+
+.neon-text {
+  
+  /* 1. Base text color is white for the bulb core */
+  color: #fff; 
+  
+  /* 2. Stacked text-shadow layers */
+  text-shadow:
+    /* Neon Color glow (medium) */
+    0 0 21px #F7EF8A,
+    0 0 42px #F7EF8A,
+    0 0 82px #F7EF8A,
+    /* Neon Color glow (wide/faded) */
+    0 0 92px #F7EF8A,
+    0 0 98px #F7EF8A,
+    0 0 101px #F7EF8A;
+}
+
+.text-align-justify {
+    text-align: justify;
+}
+
+#about {
+    background: white;
+    color: #263240;
+}
+
+#about a,
+#about .section-title,
+#about p,
+#about h2,
+#about h5,
+#about .lead,
+#about .card-text,
+#about .card-title {
+    color: #263240;
+}
+
+.project-row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.project-row > .col {
+    display: flex;
+    align-items: stretch;
+}
+
+.project-row .project-link {
+    display: flex;
+    flex: 1 1 100%;
+    width: 100%;
+}
+
+.project-row .project-link .card {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    width: 100%;
+}
+
+.project-row .project-link .card-body {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+}
+
+.project-row .project-link .card-body .card-text {
+    margin-top: auto;
+}
+
+.project-row .project-link .card-img-top {
+    min-height: 180px;
+    object-fit: cover;
+}
+
+/* Underline indicator for nav links (active section) */
+.section-title {
+    font-weight: 800;
+    font-style: italic;
+    text-align: center;
+    font-size: clamp(2.25rem, 3.5vw, 3.2rem);
+    letter-spacing: 0.02em;
+}
+
+#about p {
+    font-family: 'poppins', sans-serif;
+}
+
+.project-link .card {
+    min-height: 100%;
+}
+
+#projectModal .modal-dialog {
+    max-width: 1400px;
+    width: 95%;
+}
+
+/* Allow modal body to scroll and constrain to viewport height */
+#projectModal .modal-body {
+    max-height: calc(100vh - 120px);
+    overflow: auto;
+}
+
+/* Stack images vertically and allow vertical scrolling inside modal */
+
+.image-strip {
+    display: block !important;
+    overflow-y: auto !important;
+    padding-bottom: 0.5rem !important;
+    max-height: calc(100vh - 260px) !important;
+    scroll-snap-type: y mandatory !important;
+    -webkit-overflow-scrolling: touch !important;
+}
+
+.image-strip > div,
+.image-strip > .image-item {
+    display: block !important;
+    width: 100% !important;
+    scroll-snap-align: start !important;
+    scroll-snap-stop: always !important;
+    margin-bottom: 2rem !important;
+}
+
+.image-item {
+    padding: 0.5rem 0 !important;
+    box-sizing: border-box !important;
+}
+
+.image-item img {
+    display: block !important;
+    margin: 0 auto !important;
+    width: 75% !important;
+    height: auto !important;
+    max-width: 900px !important;
+    object-fit: contain !important;
+}
+
+/* Override Bootstrap column widths inside modal image strip so images stack vertically */
+.image-strip > .col-12,
+.image-strip > [class*="col-"] {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+    width: 100% !important;
+}
+
+/* Constrain images to modal width while preserving aspect ratio */
+#projectModal .image-strip img {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+.section-title + .lead {
+    text-align: center;
+}
+
+nav a, .nav-link {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Removed underline hover/active nav indicator styles */
+
+.about-slide {
+    opacity: 0;
+    transform: translateY(60px);
+    transition: opacity 0.75s ease, transform 0.75s ease;
+}
+.about-slide.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.footer-bg {
+    background-color: #263240 !important;
+}
