@@ -221,10 +221,157 @@ nav a, .nav-link {
     background-color: #263240 !important;
 }
 
-.webdev-link .card {
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+/* BENTO GALLERY */
+.webdev-bento {
+    --bento-radius: 18px;
 }
-.webdev-link:hover .card {
-    transform: translateY(-5px);
-    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .25) !important;
+
+.webdev-tile {
+    position: relative;
+    min-height: 260px;
+    overflow: hidden;
+    border-radius: var(--bento-radius);
+    background: #1E2834;
+    color: #fff;
+}
+
+.webdev-main {
+    min-height: 420px;
+    background: #1E2834;
+}
+
+.webdev-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.webdev-main::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        0deg,
+        rgba(10, 16, 24, 0.95) 0%,
+        rgba(10, 16, 24, 0.55) 45%,
+        rgba(10, 16, 24, 0.05) 100%
+    );
+}
+
+.webdev-overlay {
+    position: absolute;
+    z-index: 1;
+    inset: auto 0 0;
+    padding: 32px;
+}
+
+.webdev-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: #d2a941;
+}
+
+.webdev-overlay h3 {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+}
+
+.webdev-overlay p,
+.webdev-info p,
+.webdev-note p {
+    line-height: 1.8;
+}
+
+.webdev-visit {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #d2a941;
+    font-weight: 600;
+}
+
+.webdev-info {
+    display: flex;
+    align-items: center;
+    padding: 30px;
+    border: 1px solid rgba(210, 169, 65, 0.25);
+}
+
+.webdev-info-content {
+    max-width: 320px;
+}
+
+.webdev-icon {
+    display: block;
+    margin-bottom: 24px;
+    font-size: 2.2rem;
+    color: #d2a941;
+}
+
+.webdev-info h4 {
+    font-size: 1.4rem;
+}
+
+.webdev-note {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 32px;
+    background: #d2a941;
+    color: #1E2834;
+}
+
+.webdev-note .webdev-label {
+    color: #1E2834;
+}
+
+.webdev-note h3 {
+    max-width: 480px;
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+}
+
+.webdev-note p {
+    max-width: 480px;
+}
+
+.webdev-decoration {
+    flex-shrink: 0;
+    font-size: 3.5rem;
+    opacity: 0.5;
+}
+
+.webdev-link:hover .webdev-image {
+    transform: scale(1.05);
+}
+
+.webdev-link:focus-visible {
+    outline: 3px solid #d2a941;
+    outline-offset: 4px;
+    border-radius: var(--bento-radius);
+}
+
+@media (max-width: 767.98px) {
+    .webdev-main {
+        min-height: 350px;
+    }
+
+    .webdev-tile {
+        min-height: 240px;
+    }
+
+    .webdev-overlay {
+        padding: 24px;
+    }
+
+    .webdev-note {
+        padding: 24px;
+    }
+
+    .webdev-decoration {
+        font-size: 2rem;
+    }
 }
