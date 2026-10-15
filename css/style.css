@@ -375,3 +375,63 @@ nav a, .nav-link {
         font-size: 2rem;
     }
 }
+
+.webdev-project {
+    display: block;
+    color: white;
+    max-width: 100%;
+}
+
+.webdev-project-box {
+    position: relative;
+    overflow: hidden;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    aspect-ratio: 4 / 3;
+    background: #1E2834;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.webdev-project-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+/* White corner accent */
+.webdev-corner {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45px;
+    height: 45px;
+    background: white;
+    clip-path: polygon(100% 0, 0 0, 100% 100%);
+}
+
+/* Hover effect */
+.webdev-project:hover .webdev-project-box {
+    transform: translateY(-5px);
+    border-color: white;
+}
+
+.webdev-project:hover .webdev-project-box img {
+    transform: scale(1.04);
+}
+
+.webdev-project-title {
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.webdev-project-subtitle {
+    color: rgba(255, 255, 255, 0.65);
+    line-height: 1.6;
+}
+
+.webdev-project:focus-visible .webdev-project-box {
+    outline: 2px solid white;
+    outline-offset: 4px;
+}
